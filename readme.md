@@ -1,5 +1,8 @@
 # Zenith Maintenance
 
+![alt text](assets/img/Zenith.png)
+
+
 ## 📌 Deskripsi Proyek
 Zenith Maintenance adalah halaman pemeliharaan interaktif yang dirancang untuk memberi tahu pengunjung bahwa situs sedang dalam perbaikan dan akan segera kembali online. Dengan fitur animasi menarik dan elemen interaktif, halaman ini memberikan pengalaman yang lebih dinamis dibandingkan dengan halaman pemeliharaan statis biasa.
 
