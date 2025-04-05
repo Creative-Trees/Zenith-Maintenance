@@ -1,16 +1,23 @@
 # Enable rewrite engine
 RewriteEngine On
 
-# Redirect HTTP to HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+# =========================================
+# Force HTTPS and non-www (canonical domain)
+# =========================================
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://halfirzhadev.me%{REQUEST_URI} [R=301,L]
 
+# ====================
 # Prevent hotlinking
+# ====================
 RewriteCond %{HTTP_REFERER} !^$
 RewriteCond %{HTTP_REFERER} !^https://(www\.)?halfirzhadev\.me [NC]
 RewriteRule \.(jpg|jpeg|png|gif|svg|webp)$ - [F,NC]
 
-# Enable compression for better performance
+# ====================
+# GZIP Compression
+# ====================
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html
     AddOutputFilterByType DEFLATE text/css
@@ -23,7 +30,9 @@ RewriteRule \.(jpg|jpeg|png|gif|svg|webp)$ - [F,NC]
     AddOutputFilterByType DEFLATE image/svg+xml
 </IfModule>
 
-# Browser caching for static assets
+# =============================
+# Browser caching (Expires)
+# =============================
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresByType text/css "access plus 1 month"
@@ -36,29 +45,47 @@ RewriteRule \.(jpg|jpeg|png|gif|svg|webp)$ - [F,NC]
     ExpiresByType application/font-woff2 "access plus 1 month"
 </IfModule>
 
-# Add Cache-Control header
+# ================================
+# Cache-Control headers
+# ================================
 <IfModule mod_headers.c>
     <FilesMatch "\.(jpg|jpeg|png|gif|svg|css|js|woff|woff2|ttf|eot|ico|pdf|webp)$">
         Header set Cache-Control "max-age=31536000, public"
     </FilesMatch>
 </IfModule>
 
-# Prevent directory listing
+# =====================
+# Disable directory listing
+# =====================
 Options -Indexes
 
+# ===========================
 # Security headers
+# ===========================
 <IfModule mod_headers.c>
-    Header set X-Content-Type-Options "nosniff"
-    Header set X-Frame-Options "DENY"
-    Header set X-XSS-Protection "1; mode=block"
-    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://ipinfo.io https://nominatim.openstreetmap.org; object-src 'none';"
-    Header set Referrer-Policy "strict-origin-when-cross-origin"
-    Header set Permissions-Policy "geolocation=(self)"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://ipinfo.io https://nominatim.openstreetmap.org; object-src 'none';"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(self)"
+    Header always set permissions-policy "geolocation=(self)"  # lowercase for broader support
 </IfModule>
 
-# Deny access to sensitive files
+# ==========================
+# Block sensitive file access
+# ==========================
 <FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak|sql)$">
-    Order allow,deny
-    Deny from all
+    Require all denied
 </FilesMatch>
+
+# ================================
+# Optional: Add correct MIME types
+# ================================
+<IfModule mod_mime.c>
+    AddType application/font-woff2 .woff2
+    AddType application/font-woff .woff
+    AddType application/vnd.ms-fontobject .eot
+    AddType font/ttf .ttf
+</IfModule>

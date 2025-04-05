@@ -1,0 +1,39 @@
+{
+    "metadata": {
+        "created_at": "2025-04-05 19:39:01",
+        "version": "1.0",
+        "last_updated": "2025-04-05 19:39:01",
+        "entry_count": 1
+    },
+    "entries": [
+        {
+            "id": "b0da7d07-405b-4980-99b2-3f773e0386e8",
+            "timestamp": "2025-04-05 19:39:01",
+            "datetime": {
+                "day_name": "Sabtu",
+                "date": 5,
+                "month": "April",
+                "year": 2025,
+                "time": "19:39:01",
+                "timestamp_unix": 1743856741
+            },
+            "client": {
+                "ip_address": "::1",
+                "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Safari/605.1.15",
+                "referer": "http://localhost:8000/",
+                "request_method": "POST",
+                "protocol": "HTTP/1.1"
+            },
+            "geo": {
+                "country": "Unknown",
+                "city": "Unknown",
+                "region": "Unknown",
+                "timezone": "Asia/Jakarta"
+            },
+            "content": "\n[05/04/2025, 19:39:01]\n- IP Address: 140.0.81.249\n- Device: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Safari/605.1.15\n- Browser: Safari\n- Location: \n  - Kota: Unknown City\n  - Provinsi: Unknown Region\n  - Negara: Unknown Country\n  - Koordinat: -6.968564686666443,107.66795536273268\n  - 🌍 Google Maps: https://www.google.com/maps?q=-6.968564686666443,107.66795536273268\n- ISP: AS23700 Linknet-Fastnet ASN\n- Timezone: Asia/Jakarta\n- VPN Detected: No\n- High Accuracy: No\n\n\n",
+            "security": {
+                "is_suspicious": false
+            }
+        }
+    ]
+}

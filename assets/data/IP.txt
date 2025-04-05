@@ -1,0 +1,31 @@
+==============================================================
+🔑 Log ID: b0da7d07-405b-4980-99b2-3f773e0386e8
+📅 Hari: Sabtu
+📅 Tanggal: 05
+📅 Bulan: April
+📅 Tahun: 2025
+⏰ Waktu: 19:39:01
+🌐 IP Address: ::1
+🖥️ User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Safari/605.1.15
+🔗 Referer: http://localhost:8000/
+==============================================================
+
+[05/04/2025, 19:39:01]
+- IP Address: 140.0.81.249
+- Device: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Safari/605.1.15
+- Browser: Safari
+- Location: 
+  - Kota: Unknown City
+  - Provinsi: Unknown Region
+  - Negara: Unknown Country
+  - Koordinat: -6.968564686666443,107.66795536273268
+  - 🌍 Google Maps: https://www.google.com/maps?q=-6.968564686666443,107.66795536273268
+- ISP: AS23700 Linknet-Fastnet ASN
+- Timezone: Asia/Jakarta
+- VPN Detected: No
+- High Accuracy: No
+
+
+
+==============================================================
+
