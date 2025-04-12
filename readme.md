@@ -1,21 +1,12 @@
 # Zenith Maintenance
 
-<div align="center">
-  <img src="assets/img/Zenith.png" alt="Zenith Maintenance Logo" width="300px"/>
-  <br>
-  <br>
-  
+Zenith Maintenance adalah halaman pemeliharaan interaktif premium yang dirancang untuk memberi tahu pengunjung bahwa situs sedang dalam perbaikan. Tidak seperti halaman pemeliharaan statis biasa, Zenith menawarkan pengalaman yang dinamis dan menarik dengan animasi modern, musik latar, serta informasi pengunjung real-time dengan teknologi geolokasi presisi ultra tinggi. 
+<br><br>
   ![Version](https://img.shields.io/badge/version-1.4.0-blue.svg)
   ![License](https://img.shields.io/badge/license-MIT-green.svg)
   ![Last Updated](https://img.shields.io/badge/updated-2025--04--11-orange.svg)
   ![Maintained by](https://img.shields.io/badge/Maintained%20by-Halfirzzha-purple.svg)
-</div>
 
-<br>
-
-## 📌 Deskripsi Proyek
-
-Zenith Maintenance adalah halaman pemeliharaan interaktif premium yang dirancang untuk memberi tahu pengunjung bahwa situs sedang dalam perbaikan. Tidak seperti halaman pemeliharaan statis biasa, Zenith menawarkan pengalaman yang dinamis dan menarik dengan animasi modern, musik latar, serta informasi pengunjung real-time dengan teknologi geolokasi presisi ultra tinggi.
 
 ## ✨ Fitur Utama
 
