@@ -1,0 +1,47 @@
+================================================================================
+ZENITH LOG #5979f81b-eb67-45a4-b4d0-d883fff1a029
+================================================================================
+INFORMASI DASAR:
+--------------------------------------------------------------------------------
+Tanggal        : Sabtu, 2025-04-12
+Waktu          : 10:32:32
+IP             : 101.255.116.50
+User Agent     : Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KH...
+URL            : https://dbc4-180-252-115-9.ngrok-free.app/
+Status         : ⚠️ ALERT - critical
+
+INFORMASI PENGUNJUNG:
+--------------------------------------------------------------------------------
+Browser        : Chrome Mobile
+Perangkat      : Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.6312.118 Mobile Safari/537.36 XiaoMi/MiuiBrowser/14.32.0-gn
+Lokasi         : Cikarang, West Java, ID
+Provider       : AS38511 PT Remala Abadi
+
+RIWAYAT IP:
+--------------------------------------------------------------------------------
+Total Kunjungan     : 1
+Pertama Terlihat    : 2025-04-12 10:32:32
+
+URL TERBARU DARI IP INI:
+1. https://dbc4-180-252-115-9.ngrok-free.app/ (2025-04-12 10:32:32)
+
+PERINGATAN KEAMANAN:
+--------------------------------------------------------------------------------
+Tingkat        : CRITICAL
+Alasan         : Detected potential cmd attack in content
+Pola           : cmd
+Keyakinan      : 85%
+
+ISI LOG:
+--------------------------------------------------------------------------------
+[2025-04-12T03:32:32.327Z]- IP Address: 101.255.116.50- Device: Mozilla/5.0
+(Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko)
+Chrome/123.0.6312.118 Mobile Safari/537.36 XiaoMi/MiuiBrowser/14.32.0-gn-
+Browser: Chrome Mobile- Location:   - City: Cikarang  - Region: West Java  -
+Country: ID  - Coordinates: -6.26123372,107.15252955  - Map:
+https://www.google.com/maps?q=-6.26123372,107.15252955&amp;z=21&amp;marker=-6.26123372,107.15252955&amp;t=h-
+ISP: AS38511 PT Remala Abadi- Timezone: Asia/Jakarta- Accuracy: 100 meters
+(STANDARD PRECISION)- Confidence: 50%- Environment: undefined- Connection: 4g
+(9.4 Mbps)- System: UltraLoc™ v1.4.0- User: Halfirzzha- Acquisition Time:
+2025-04-11 16:42:07
+================================================================================

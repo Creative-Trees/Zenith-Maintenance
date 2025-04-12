@@ -1,0 +1,780 @@
+/* ==========================
+   Root Variables - Extended with Theme Options
+========================== */
+:root {
+  /* Primary Colors */
+  --neon-blue: #00f3ff;
+  --neon-purple: #9d00ff;
+  --neon-pink: #ff00f7;
+  --dark: #121212;
+  --light: #ffffff;
+
+  /* Background & Surfaces */
+  --card-bg: rgba(18, 18, 18, 0.8);
+  --overlay-bg: rgba(0, 0, 0, 0.85);
+  --code-bg: #1c1c1c;
+
+  /* Gradients */
+  --gradient-1: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
+  --gradient-2: linear-gradient(45deg, var(--neon-pink), var(--neon-purple));
+
+  /* Functional Colors */
+  --focus-outline: rgba(0, 243, 255, 0.8);
+  --text-primary: rgba(255, 255, 255, 1);
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --border-light: rgba(255, 255, 255, 0.1);
+
+  /* Shadows */
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 15px 40px rgba(0, 243, 255, 0.2);
+  --shadow-glow: 0 0 15px rgba(0, 243, 255, 0.5);
+
+  /* Animation */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* Spacing System */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 5px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+
+  /* Typography */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+
+  /* Z-index Layers */
+  --z-background: -1;
+  --z-base: 1;
+  --z-overlay: 10;
+  --z-modal: 100;
+}
+
+/* ==========================
+   Reset and Modern Normalization
+========================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Improved font rendering */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+/* Add responsive design support */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  line-height: 1.6;
+  font-size: var(--font-size-md);
+
+  /* Performance: contain paint to improve rendering performance */
+  contain: content;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================
+   Accessibility Enhancements
+========================== */
+:focus {
+  outline: 2px solid var(--focus-outline);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-outline);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+a,
+button {
+  color: inherit;
+  transition: color var(--transition-normal),
+    background-color var(--transition-normal),
+    transform var(--transition-normal), opacity var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+/* ==========================
+   Background Effects - Performance Optimized
+========================== */
+.particles,
+.glitch-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-background);
+  pointer-events: none;
+
+  /* Performance optimization */
+  contain: strict;
+  will-change: opacity;
+}
+
+.particles {
+  /* Prevent janky page load by starting hidden */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.particles.loaded {
+  opacity: 1;
+}
+
+.glitch-overlay {
+  background: var(--gradient-1);
+  opacity: 0.1;
+
+  /* Add subtle animation */
+  animation: pulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 0.15;
+  }
+}
+
+/* ==========================
+   Layout Containers - Using Grid
+========================== */
+.container {
+  --container-padding: var(--space-lg);
+
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: var(--container-padding);
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ==========================
+   Card Component - Enhanced with Performance-friendly Effects
+========================== */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+
+  /* Only animate transform & shadow for performance */
+  transition: transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+
+  /* Content visibility to improve rendering performance */
+  contain: content;
+
+  /* Prevent text shimmer during animation */
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+
+  /* Hardware acceleration for smoother animation */
+  will-change: transform;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.card:hover::before {
+  transform: translateX(200%);
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ==========================
+   Countdown Timer - Grid Layout
+========================== */
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+
+  /* Add smooth entrance animation */
+  animation: fadeUp 1s var(--transition-normal);
+}
+
+.time-block {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Add gentle hover effect */
+  transition: transform var(--transition-normal);
+}
+
+.time-block:hover {
+  transform: translateY(-2px);
+}
+
+.time-block span {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--neon-blue);
+
+  /* Prevent layout shift */
+  min-height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Add text shadow for glow effect */
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+.time-block .label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ==========================
+   Message Section - Text Enhancements
+========================== */
+.message {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  animation: fadeUp 1s var(--transition-normal) 0.2s backwards;
+}
+
+.message h1 {
+  margin-bottom: var(--space-md);
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  line-height: 1.2;
+  background: var(--gradient-1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Text shadow for better readability */
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================
+   Buttons - Enhanced Interaction
+========================== */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  animation: fadeUp 1s var(--transition-normal) 0.4s backwards;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: var(--font-size-md);
+  letter-spacing: 0.01em;
+  color: var(--light);
+  position: relative;
+  overflow: hidden;
+
+  /* Performance: only animate transform and shadow */
+  transition: transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+
+  /* Make icons align better */
+  line-height: 1;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Primary button with gradient effect */
+.btn.primary {
+  background: var(--gradient-1);
+  width: 100%;
+  box-shadow: var(--shadow-glow);
+  position: relative;
+  z-index: 1;
+}
+
+.btn.primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btn.primary:hover::after {
+  opacity: 1;
+}
+
+/* Social buttons */
+.btn.social {
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn.social:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+/* Add button icon animations */
+.btn svg {
+  transition: transform 0.3s ease;
+}
+
+.btn:hover svg {
+  transform: scale(1.1);
+}
+
+/* ==========================
+   Footer - Enhanced
+========================== */
+footer {
+  text-align: center;
+  padding: var(--space-lg);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  position: relative;
+  z-index: var(--z-base);
+
+  /* Subtle entrance animation */
+  animation: fadeIn 1s var(--transition-normal) 0.6s backwards;
+}
+
+/* ==========================
+   Visitor Info - Enhanced Styles
+========================== */
+.visitor-info {
+  margin: var(--space-lg) auto;
+  padding: var(--space-md);
+  background: rgba(18, 18, 18, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: var(--radius-md);
+  max-width: 800px;
+  box-shadow: var(--shadow-md);
+  animation: fadeIn 1s ease-in-out 1s backwards;
+  overflow-x: auto;
+
+  /* Contain the layout for better performance */
+  contain: content;
+}
+
+.visitor-info h2 {
+  margin-bottom: var(--space-sm);
+  color: var(--neon-blue);
+  font-size: var(--font-size-xl);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.visitor-info pre {
+  background: var(--code-bg);
+  color: rgba(255, 255, 255, 0.85);
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  overflow-x: auto;
+  line-height: 1.5;
+
+  /* Improve code readability */
+  font-family: "Consolas", "Courier New", monospace;
+  white-space: pre-wrap;
+}
+
+/* ==========================
+   Privacy Notice - Enhanced with Animation
+========================== */
+.privacy-notice {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--overlay-bg);
+  color: white;
+  padding: 15px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  box-shadow: var(--shadow-md);
+  z-index: var(--z-overlay);
+  max-width: 300px;
+
+  /* More efficient animation */
+  animation: slideInRight 0.5s var(--transition-normal);
+
+  /* Improve performance by using hardware acceleration */
+  will-change: transform, opacity;
+
+  /* Make border visible but subtle */
+  border: 1px solid var(--border-light);
+}
+
+.privacy-notice p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.privacy-notice a {
+  color: var(--neon-blue);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color var(--transition-normal);
+}
+
+.privacy-notice a:hover {
+  color: var(--neon-pink);
+}
+
+/* ==========================
+   Autoplay Notice - Enhanced for Smooth Animation
+========================== */
+.autoplay-notice {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--overlay-bg);
+  color: white;
+  padding: 15px 20px;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  box-shadow: var(--shadow-md);
+  z-index: var(--z-overlay);
+  max-width: 300px;
+  width: auto;
+  border: 1px solid var(--border-light);
+
+  /* Performance: Use opacity and transform for smooth animation */
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity var(--transition-normal),
+    transform var(--transition-normal), visibility var(--transition-normal);
+
+  /* Start hidden without disrupting animation */
+  visibility: hidden;
+
+  /* Hardware acceleration for smoother animation */
+  will-change: transform, opacity;
+}
+
+.autoplay-notice.prepare-animation {
+  visibility: visible;
+  display: block;
+}
+
+.autoplay-notice.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.autoplay-notice-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.autoplay-notice p {
+  margin: 0;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.autoplay-notice button {
+  padding: 8px 12px;
+  background-color: var(--neon-blue);
+  color: var(--dark);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.autoplay-notice button:hover {
+  background-color: white;
+  transform: translateY(-2px);
+}
+
+.autoplay-notice button:active {
+  transform: translateY(0);
+}
+
+/* ==========================
+   Optimized Animations
+========================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Remove any animation for people who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .autoplay-notice,
+  .privacy-notice,
+  .card,
+  .btn,
+  .visitor-info,
+  .countdown,
+  .message,
+  .buttons,
+  footer {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==========================
+   Responsive Design with Grid
+========================== */
+@media (max-width: 768px) {
+  :root {
+    /* Adjust spacing for mobile */
+    --space-xl: 2rem;
+  }
+
+  .card {
+    padding: var(--space-lg);
+    width: 100%;
+  }
+
+  .time-block span {
+    font-size: var(--font-size-2xl);
+  }
+
+  .message h1 {
+    font-size: var(--font-size-xl);
+  }
+
+  .autoplay-notice,
+  .privacy-notice {
+    left: 20px;
+    right: 20px;
+    max-width: none;
+    width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    /* Further adjust for small screens */
+    --space-lg: 1.5rem;
+  }
+
+  .social-buttons {
+    flex-wrap: wrap;
+  }
+
+  .btn.social {
+    flex: 1;
+    min-width: 70px;
+  }
+}
+
+/* ==========================
+   Print Styles
+========================== */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .particles,
+  .glitch-overlay,
+  .autoplay-notice,
+  .privacy-notice {
+    display: none !important;
+  }
+}
+
+/* ==========================
+   Support for Dark/Light Mode
+========================== */
+@media (prefers-color-scheme: dark) {
+  /* Already in dark mode, no changes needed */
+}
+
+@media (prefers-color-scheme: light) {
+  /* Override for light mode if needed in the future */
+}
+
+/* ==========================
+   Utility Classes
+========================== */
+.text-gradient {
+  background: var(--gradient-1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

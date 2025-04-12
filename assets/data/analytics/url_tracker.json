@@ -1,0 +1,21 @@
+{
+    "metadata": {
+        "created": "2025-04-12 10:32:32",
+        "updated": "2025-04-12 10:32:32",
+        "version": "3.0.0"
+    },
+    "urls": {
+        "https://dbc4-180-252-115-9.ngrok-free.app/": {
+            "url": "https://dbc4-180-252-115-9.ngrok-free.app/",
+            "hostname": "dbc4-180-252-115-9.ngrok-free.app",
+            "path": "/",
+            "first_seen": "2025-04-12 10:32:32",
+            "last_visit": "2025-04-12 10:32:32",
+            "visit_count": 1,
+            "suspicious": false,
+            "reason": "",
+            "pattern": "",
+            "severity": "low"
+        }
+    }
+}

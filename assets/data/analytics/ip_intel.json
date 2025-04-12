@@ -1,0 +1,23 @@
+{
+    "metadata": {
+        "created": "2025-04-12 10:32:32",
+        "updated": "2025-04-12 10:32:32",
+        "version": "3.0.0"
+    },
+    "ips": {
+        "101.255.116.50": {
+            "first_seen": "2025-04-12 10:32:32",
+            "last_seen": "2025-04-12 10:32:32",
+            "visit_count": 1,
+            "suspicious_count": 0,
+            "url_history": [
+                {
+                    "url": "https://dbc4-180-252-115-9.ngrok-free.app/",
+                    "timestamp": "2025-04-12 10:32:32",
+                    "suspicious": false
+                }
+            ],
+            "log_count": 1
+        }
+    }
+}

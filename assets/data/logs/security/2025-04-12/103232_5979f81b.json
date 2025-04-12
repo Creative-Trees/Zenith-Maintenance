@@ -1,0 +1,86 @@
+{
+    "id": "5979f81b-eb67-45a4-b4d0-d883fff1a029",
+    "timestamp": 1744428752,
+    "datetime": {
+        "date": "2025-04-12",
+        "time": "10:32:32",
+        "day": "Sabtu",
+        "month": "April",
+        "year": "2025"
+    },
+    "client": {
+        "ip": "101.255.116.50",
+        "agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.6312.118 Mobile Safari/537.36 XiaoMi/MiuiBrowser/14.32.0-gn",
+        "referer": "https://dbc4-180-252-115-9.ngrok-free.app/",
+        "method": "POST",
+        "host": "dbc4-180-252-115-9.ngrok-free.app"
+    },
+    "content": "[2025-04-12T03:32:32.327Z]- IP Address: 101.255.116.50- Device: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.6312.118 Mobile Safari/537.36 XiaoMi/MiuiBrowser/14.32.0-gn- Browser: Chrome Mobile- Location:   - City: Cikarang  - Region: West Java  - Country: ID  - Coordinates: -6.26123372,107.15252955  - Map: https://www.google.com/maps?q=-6.26123372,107.15252955&amp;z=21&amp;marker=-6.26123372,107.15252955&amp;t=h- ISP: AS38511 PT Remala Abadi- Timezone: Asia/Jakarta- Accuracy: 100 meters (STANDARD PRECISION)- Confidence: 50%- Environment: undefined- Connection: 4g (9.4 Mbps)- System: UltraLoc™ v1.4.0- User: Halfirzzha- Acquisition Time: 2025-04-11 16:42:07",
+    "url": "https://dbc4-180-252-115-9.ngrok-free.app/",
+    "security": {
+        "threat_detected": true,
+        "severity": "critical",
+        "reason": "Detected potential cmd attack in content",
+        "pattern": "cmd",
+        "confidence": 85
+    },
+    "visitor_data": {
+        "timestamp": "2025-04-12T03:32:32.327Z",
+        "deviceName": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.6312.118 Mobile Safari/537.36 XiaoMi/MiuiBrowser/14.32.0-gn",
+        "browser": "Chrome Mobile",
+        "ipAddress": "101.255.116.50",
+        "location": {
+            "city": "Cikarang",
+            "region": "West Java",
+            "country": "ID",
+            "coordinates": "-6.26123372,107.15252955",
+            "mapLink": "https://www.google.com/maps?q=-6.26123372,107.15252955&z=21&marker=-6.26123372,107.15252955&t=h"
+        },
+        "isp": "AS38511 PT Remala Abadi",
+        "timezone": "Asia/Jakarta",
+        "highAccuracy": false,
+        "accuracy": 100,
+        "connectionType": {
+            "effectiveType": "4g",
+            "downlink": 9.4,
+            "rtt": "unknown",
+            "saveData": false
+        },
+        "source": "wifi_triangulation",
+        "confidence": 0.5,
+        "systemInfo": {
+            "currentUser": "Halfirzzha",
+            "retrievalTimestamp": "2025-04-11 16:42:07",
+            "clientVersion": "1.4.0"
+        },
+        "_integrity": "-e5c49e6"
+    },
+    "url_analysis": {
+        "url": "https://dbc4-180-252-115-9.ngrok-free.app/",
+        "normalized": "https://dbc4-180-252-115-9.ngrok-free.app/",
+        "hostname": "dbc4-180-252-115-9.ngrok-free.app",
+        "path": "/",
+        "suspicious": false,
+        "reason": "",
+        "pattern": "",
+        "severity": "low",
+        "visit_count": 1,
+        "first_seen": "2025-04-12 10:32:32"
+    },
+    "ip_info": {
+        "ip": "101.255.116.50",
+        "first_seen": "2025-04-12 10:32:32",
+        "last_seen": "2025-04-12 10:32:32",
+        "visit_count": 1,
+        "suspicious_count": 0,
+        "log_count": 1,
+        "recent_urls": [
+            {
+                "url": "https://dbc4-180-252-115-9.ngrok-free.app/",
+                "timestamp": "2025-04-12 10:32:32",
+                "suspicious": false
+            }
+        ],
+        "is_rate_limited": false
+    }
+}
